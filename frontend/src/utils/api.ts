@@ -40,7 +40,10 @@ export async function apiFetch<T>(
     ...fetchOptions
   } = options;
 
-  const baseUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';
+  let baseUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';
+  if (!baseUrl.startsWith('http://') && !baseUrl.startsWith('https://')) {
+    baseUrl = `https://${baseUrl}`;
+  }
   const url = `${baseUrl}${path.startsWith('/') ? path : `/${path}`}`;
 
   // Get active role from localStorage for dynamic client-side auth switches
