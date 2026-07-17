@@ -1,0 +1,31 @@
+# Environment
+.env
+.env.local
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+backend/venv/
+backend/env/
+backend/build/
+backend/dist/
+backend/*.egg-info/
+backend/.pytest_cache/
+backend/.mypy_cache/
+
+# Databases
+*.db
+*.sqlite
+*.sqlite3
+
+# Node/Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.npm/
+frontend/npm-debug.log*
+
+# System
+.DS_Store
+Thumbs.db
